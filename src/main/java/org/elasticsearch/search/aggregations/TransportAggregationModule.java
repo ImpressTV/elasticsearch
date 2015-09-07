@@ -56,6 +56,7 @@ import org.elasticsearch.search.aggregations.metrics.stats.InternalStats;
 import org.elasticsearch.search.aggregations.metrics.stats.extended.InternalExtendedStats;
 import org.elasticsearch.search.aggregations.metrics.sum.InternalSum;
 import org.elasticsearch.search.aggregations.metrics.tophits.InternalTopHits;
+import org.elasticsearch.search.aggregations.metrics.unique.InternalUnique;
 import org.elasticsearch.search.aggregations.metrics.valuecount.InternalValueCount;
 
 /**
@@ -78,6 +79,7 @@ public class TransportAggregationModule extends AbstractModule implements SpawnM
         InternalPercentileRanks.registerStreams();
         InternalCardinality.registerStreams();
         InternalScriptedMetric.registerStreams();
+        InternalUnique.registerStreams();
 
         // buckets
         InternalGlobal.registerStreams();

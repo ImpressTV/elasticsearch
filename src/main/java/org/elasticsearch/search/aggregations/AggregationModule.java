@@ -53,6 +53,7 @@ import org.elasticsearch.search.aggregations.metrics.stats.StatsParser;
 import org.elasticsearch.search.aggregations.metrics.stats.extended.ExtendedStatsParser;
 import org.elasticsearch.search.aggregations.metrics.sum.SumParser;
 import org.elasticsearch.search.aggregations.metrics.tophits.TopHitsParser;
+import org.elasticsearch.search.aggregations.metrics.unique.UniqueParser;
 import org.elasticsearch.search.aggregations.metrics.valuecount.ValueCountParser;
 
 import java.util.List;
@@ -75,6 +76,7 @@ public class AggregationModule extends AbstractModule implements SpawnModules{
         parsers.add(PercentilesParser.class);
         parsers.add(PercentileRanksParser.class);
         parsers.add(CardinalityParser.class);
+        parsers.add(UniqueParser.class);
 
         parsers.add(GlobalParser.class);
         parsers.add(MissingParser.class);

@@ -74,6 +74,7 @@ import org.elasticsearch.search.aggregations.metrics.sum.Sum;
 import org.elasticsearch.search.aggregations.metrics.sum.SumBuilder;
 import org.elasticsearch.search.aggregations.metrics.tophits.TopHits;
 import org.elasticsearch.search.aggregations.metrics.tophits.TopHitsBuilder;
+import org.elasticsearch.search.aggregations.metrics.unique.UniqueBuilder;
 import org.elasticsearch.search.aggregations.metrics.valuecount.ValueCount;
 import org.elasticsearch.search.aggregations.metrics.valuecount.ValueCountBuilder;
 
@@ -265,6 +266,13 @@ public class AggregationBuilders {
      */
     public static CardinalityBuilder cardinality(String name) {
         return new CardinalityBuilder(name);
+    }
+
+    /**
+     * Create a new Unique aggregation with the given name.
+     */
+    public static UniqueBuilder unique(String name) {
+        return new UniqueBuilder(name);
     }
 
     /**

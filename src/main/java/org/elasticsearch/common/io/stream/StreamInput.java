@@ -430,6 +430,13 @@ public abstract class StreamInput extends InputStream {
                 return readFloatArray();
             case 20:
                 return readDoubleArray();
+            case 21:
+                int size21 = readVInt();
+                Set set = new HashSet(size21);
+                for (int i = 0; i < size21; i++) {
+                    set.add(readGenericValue());
+                }
+                return set;
             default:
                 throw new IOException("Can't read unknown type [" + type + "]");
         }

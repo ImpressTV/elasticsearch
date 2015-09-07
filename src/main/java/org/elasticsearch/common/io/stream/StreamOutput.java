@@ -33,6 +33,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -411,6 +412,13 @@ public abstract class StreamOutput extends OutputStream {
         } else if (type == double[].class) {
             writeByte((byte) 20);
             writeDoubleArray((double[]) value);
+        } else if (value instanceof Set) {
+            writeByte((byte) 21);
+            Set set = (Set) value;
+            writeVInt(set.size());
+            for (Object o : set) {
+                writeGenericValue(o);
+            }
         } else {
             throw new IOException("Can't write type [" + type + "]");
         }
